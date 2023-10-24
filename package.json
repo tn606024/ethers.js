@@ -1,5 +1,7 @@
 {
   "name": "ethers",
+  "main": "./packages/providers/lib/index.js",
+  "module": "./packages/providers/lib.esm/index.js",
   "common": {
     "ethereum": "donations.ethers.eth",
     "funding": [
