@@ -256,7 +256,7 @@ export class WebSocketProvider extends JsonRpcProvider {
                 break;
 
             case "pending":
-                this._subscribe("pending", [ "newPendingTransactions" ], (result: any) => {
+                this._subscribe("pending", [ "newPendingTransactions", true], (result: any) => {
                     this.emit("pending", result);
                 });
                 break;
