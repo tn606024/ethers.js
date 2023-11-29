@@ -268,6 +268,12 @@ export class WebSocketProvider extends JsonRpcProvider {
                 });
                 break;
 
+            case "mevblocker": 
+                this._subscribe("mevblocker", [ "mevblocker_partialPendingTransactions" ], (result: any) => {
+                    this.emit("mevblocker", result);
+                });
+                break;
+                
             case "tx": {
                 const emitReceipt = (event: Event) => {
                     const hash = event.hash;
@@ -299,7 +305,7 @@ export class WebSocketProvider extends JsonRpcProvider {
                 break;
 
             default:
-                console.log("unhandled:", event);
+                console.log("unhandled:", event, "type:", event.type);
                 break;
         }
     }

@@ -134,7 +134,7 @@ function stall(duration: number): Promise<void> {
  *   - transaction hash
  */
 
-const PollableEvents = [ "block", "network", "pending", "poll" ];
+const PollableEvents = [ "block", "network", "pending", "poll", "mevblocker"];
 
 export class Event {
     readonly listener: Listener;
